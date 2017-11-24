@@ -1,3 +1,9 @@
+<?php
+    
+    include 'database/db_connection.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +17,7 @@
 <div class="container">
   <h1>My First Bootstrap Page</h1>
   <p>This is some text.</p>
+  
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

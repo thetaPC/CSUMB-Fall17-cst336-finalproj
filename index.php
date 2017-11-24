@@ -11,14 +11,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
   
   <?php include 'html/header.html'; ?>
 
   <div class="container-fluid">
-    <h1>My First Bootstrap Page</h1>
-    <p>This is some text.</p>
+    
+    <div class="row">
+      <div class="col-md-8">
+        <img id="salmon-main" src="https://www.manusmenu.com/wp-content/uploads/2016/05/1-Salmon-Sashimi-with-Ponzu-3-1-of-1.jpg" />
+      </div>
+      <div class="col-md-4">
+        <img id="roll-main" src="https://i.pinimg.com/736x/9b/fc/b5/9bfcb57cfc568c2a266f6ee383213d4a--tuna-sushi-recipe-sushi-recipes.jpg" />
+      </div>
+    </div>
     
   </div>
 

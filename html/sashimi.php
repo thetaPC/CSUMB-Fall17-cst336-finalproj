@@ -21,21 +21,23 @@
   <div class="container port-section">
       
       <div id="portfolio">
-        <div class="tile scale-anm all">
-          <a data-fancybox data-caption="Single yet not Lonely" href="https://pre00.deviantart.net/4129/th/pre/i/2016/051/7/f/single_yet_not_lonely_by_sketch_and_smile-d9sitn9.jpg">
-            <img class="resize" src="https://pre00.deviantart.net/4129/th/pre/i/2016/051/7/f/single_yet_not_lonely_by_sketch_and_smile-d9sitn9.jpg" alt="" />
-          </a>
-        </div>
-        <div class="tile scale-anm all">
-          <a data-fancybox data-caption="Yourself" href="https://pre00.deviantart.net/3dd4/th/pre/f/2015/271/f/0/20150716_130550_1_by_sketch_and_smile-d9b9q5v.jpg">
-            <img class="resize" src="https://pre00.deviantart.net/3dd4/th/pre/f/2015/271/f/0/20150716_130550_1_by_sketch_and_smile-d9b9q5v.jpg" alt="" />
-          </a>
-        </div>
-        <div class="tile scale-anm all">
-          <a data-fancybox data-caption="" href="">
-            <img class="resize" src="" alt="" />
-          </a>
-        </div>
+        <?php
+            $sql = "SELECT * FROM sashimi";
+            
+            $res = mysqli_query($conn, $sql);
+                
+            if (mysqli_num_rows($res) > 0) {
+                while ($row = mysqli_fetch_assoc($res)) {
+                    echo "
+                        <div class='tile scale-anm all'>
+                            <a data-fancybox data-caption='" . $row["desc"] . "' href='" . $row["img"] . "'>
+                                <img class='resize' src='" . $row["img"] . "' alt='" . $row["name"] . "' />
+                            </a>
+                            <p>" . $row["name"] . " - $" . $row["cost"] . "</p>
+                        </div>";
+                }
+            }
+        ?>
         
       </div>
     </div> 
@@ -48,7 +50,6 @@
   <script>
       $("[data-fancybox]").fancybox({
       		// Options will go here
-      		// loop : true,
       	});
   </script>
 </body>

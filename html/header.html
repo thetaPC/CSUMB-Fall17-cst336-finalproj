@@ -1,28 +1,56 @@
- <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-  <!-- Brand -->
-  <a class="navbar-brand" href="/final_project/index.php">Sushi</a>
-
-  <!-- Toggler/collapsibe Button -->
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <!-- Navbar links -->
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/final_project/html/sashimi.php">Sashimi</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Nigiri</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Uramaki</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search">
-      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-</nav> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/header.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" href="/final_project/index.php">Sushi</a>
+  
+    <!-- Toggler/collapsibe Button -->
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <!-- Navbar links -->
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/final_project/html/sashimi.php">Sashimi</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/final_project/html/nigiri.php">Nigiri</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Uramaki</a>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-search form-inline" role="search">
+          <div class="input-group">
+              <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    All
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" value="">Sashimi
+                      </label>
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" value="">Nigiri
+                      </label>
+                    </a>
+                  </div>
+              </div>
+              <input type="text" class="form-control mr-sm-2" placeholder="Search...">
+          </div>  
+          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>   
+    </div>
+  </nav> 
+</body>

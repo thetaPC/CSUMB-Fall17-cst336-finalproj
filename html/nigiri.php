@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../css/fancybox/jquery.fancybox.min.css">
   <link rel="stylesheet" href="../css/gallery.css">
+  <!--<link rel="stylesheet" href="../css/header.css">-->
 </head>
 <body>
   
@@ -22,7 +23,7 @@
       
       <div id="portfolio">
         <?php
-            $sql = "SELECT * FROM sashimi";
+            $sql = "SELECT * FROM nigiri";
             
             $res = mysqli_query($conn, $sql);
                 

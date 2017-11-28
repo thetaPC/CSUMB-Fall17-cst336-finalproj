@@ -28,7 +28,7 @@
           <a class="nav-link" href="#">Uramaki</a>
         </li>
       </ul>
-      <form class="navbar-form navbar-search form-inline" role="search">
+      <form class="navbar-form navbar-search form-inline" role="search" action="/final_project/html/search.php" method="post">
           <div class="input-group">
               <div class="input-group-btn">
                   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -37,17 +37,17 @@
                   <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">
                       <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">Sashimi
+                        <input type="checkbox" name="type[]" value="sashimi" class="form-check-input" value="">Sashimi
                       </label>
                     </a>
                     <a class="dropdown-item" href="#">
                       <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" value="">Nigiri
+                        <input type="checkbox" name="type[]" value="nigiri" class="form-check-input" value="">Nigiri
                       </label>
                     </a>
                   </div>
               </div>
-              <input type="text" class="form-control mr-sm-2" placeholder="Search...">
+              <input type="text" name="searchName" value="" class="form-control mr-sm-2" placeholder="Search...">
           </div>  
           <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
       </form>   

@@ -30,7 +30,7 @@
                 while ($row = mysqli_fetch_assoc($res)) {
                     echo "
                         <div class='tile scale-anm all'>
-                            <a data-fancybox data-caption='" . $row["desc"] . "' href='" . $row["img"] . "'>
+                            <a data-fancybox data-caption='" . $row["description"] . "' href='" . $row["img"] . "'>
                                 <img id='" . $row["id"] . "' class='resize' src='" . $row["img"] . "' alt='" . $row["name"] . "' />
                             </a>
                             <p>" . $row["name"] . " - $" . $row["cost"] . "</p>

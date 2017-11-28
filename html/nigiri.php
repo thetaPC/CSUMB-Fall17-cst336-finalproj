@@ -13,7 +13,6 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="../css/fancybox/jquery.fancybox.min.css">
   <link rel="stylesheet" href="../css/gallery.css">
-  <!--<link rel="stylesheet" href="../css/header.css">-->
 </head>
 <body>
   
@@ -31,7 +30,7 @@
                 while ($row = mysqli_fetch_assoc($res)) {
                     echo "
                         <div class='tile scale-anm all'>
-                            <a data-fancybox data-caption='" . $row["desc"] . "' href='" . $row["img"] . "'>
+                            <a data-fancybox data-caption='" . $row["description"] . "' href='" . $row["img"] . "'>
                                 <img id='" . $row["id"] . "' class='resize' src='" . $row["img"] . "' alt='" . $row["name"] . "' />
                             </a>
                             <p>" . $row["name"] . " - $" . $row["cost"] . "</p>

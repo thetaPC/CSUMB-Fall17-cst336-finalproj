@@ -31,9 +31,11 @@
                     echo "
                         <div class='tile scale-anm all'>
                             <a data-fancybox data-caption='" . $row["description"] . "' href='" . $row["img"] . "'>
-                                <img id='" . $row["id"] . "' class='resize' src='" . $row["img"] . "' alt='" . $row["name"] . "' />
+                                <figure class='figure'>
+                                    <img id='" . $row["id"] . "' class='figure-img img-fluid rounded' src='" . $row["img"] . "' alt='" . $row["name"] . "' />
+                                    <figcaption class='figure-caption'>" . $row["name"] . " - $" . $row["cost"] . "</figcaption>
+                                </figure>    
                             </a>
-                            <p>" . $row["name"] . " - $" . $row["cost"] . "</p>
                         </div>";
                 }
             }

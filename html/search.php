@@ -28,10 +28,12 @@
             $name = $_POST["searchName"];
             $name = strtolower($name);
             $name = ucfirst($name);
+        
             
             if (sizeof($_POST["type"]) > 0) {
                 foreach ($_POST["type"] as $value) {
-                    $sql = "SELECT * FROM " . $value . " WHERE name='" . $name . "' OR description like '%" . $name . "%'";
+                    // $sql = "SELECT * FROM " . $value . " WHERE name='" . $name . "' OR description like '%" . $name . "%'";
+                    $sql = "SELECT * FROM " . $value . " WHERE name like '%" . $name . "%' OR description like '%" . $name . "%'";
                     $res = mysqli_query($conn, $sql);
                     if (mysqli_num_rows($res) > 0) {
                         while ($row = mysqli_fetch_assoc($res)) {
@@ -47,7 +49,7 @@
                 }
             } else {
                 foreach ($types as $value) {
-                    $sql = "SELECT * FROM " . $value . " WHERE name='" . $name . "' OR description like '%" . $name . "%'";
+                    $sql = "SELECT * FROM " . $value . " WHERE name like '%" . $name . "%' OR description like '%" . $name . "%'";
                     $res = mysqli_query($conn, $sql);
                     if (mysqli_num_rows($res) > 0) {
                         while ($row = mysqli_fetch_assoc($res)) {

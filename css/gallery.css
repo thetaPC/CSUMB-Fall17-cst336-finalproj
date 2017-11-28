@@ -27,10 +27,18 @@
     max-width: 360px;
     max-height: 240px;
     width: 100%;
-    height: auto;
+    height: 100%;
     margin-bottom: 1rem;
 }
 
 .port-section {
     margin-top: 40px;
+}
+
+.figure {
+    display: block;
+}
+
+.figure-caption {
+    color: black;
 }

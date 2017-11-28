@@ -31,7 +31,23 @@
             
             if (sizeof($_POST["type"]) > 0) {
                 foreach ($_POST["type"] as $value) {
-                    $sql = "SELECT * FROM " . $value . " WHERE name='" . $name . "' OR description='" . $name . "'";
+                    $sql = "SELECT * FROM " . $value . " WHERE name='" . $name . "' OR description like '%" . $name . "%'";
+                    $res = mysqli_query($conn, $sql);
+                    if (mysqli_num_rows($res) > 0) {
+                        while ($row = mysqli_fetch_assoc($res)) {
+                            echo "
+                                <div class='tile scale-anm all'>
+                                    <a data-fancybox data-caption='" . $row["description"] . "' href='" . $row["img"] . "'>
+                                        <img id='" . $row["id"] . "' class='resize' src='" . $row["img"] . "' alt='" . $row["name"] . "' />
+                                    </a>
+                                    <p>" . $row["name"] . " - $" . $row["cost"] . "</p>
+                                </div>";
+                        }
+                    }
+                }
+            } else {
+                foreach ($types as $value) {
+                    $sql = "SELECT * FROM " . $value . " WHERE name='" . $name . "' OR description like '%" . $name . "%'";
                     $res = mysqli_query($conn, $sql);
                     if (mysqli_num_rows($res) > 0) {
                         while ($row = mysqli_fetch_assoc($res)) {

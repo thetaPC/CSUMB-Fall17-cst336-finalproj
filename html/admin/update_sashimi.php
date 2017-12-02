@@ -4,12 +4,12 @@
     
     if (isset($_SESSION["login"])) {  //Check whether the admin has logged in
         if ($_SESSION["login"] == "N") {
-            header('Location: login.php');
+            header('Location: ../login.php');
         }
     } else {
-        header('Location: login.php');
+        header('Location: ../login.php');
     }
-    include '../database/db_connection.php';
+    include '../../database/db_connection.php';
 
 ?>
 
@@ -20,11 +20,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="../css/admin.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/admin.css" type="text/css" />
 </head>
 <body>
   
-    <?php include 'header.html'; ?>
+    <?php include '../header.html'; ?>
   
     <div class="container-fluid">
     <div class="row d-flex d-md-block flex-nowrap wrapper">
@@ -32,7 +32,7 @@
                 <div class="list-group border-0 card text-center text-md-left">
                 <a href="#menu1" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-pencil"></i> <span class="d-none d-md-inline">Update</span> </a>
                 <div class="collapse" id="menu1">
-                    <a href="admin/update_sashimi.php" class="list-group-item" data-parent="#menu1">Sashimi</a>
+                    <a href="#" class="list-group-item" data-parent="#menu1">Sashimi</a>
                     <a href="#" class="list-group-item" data-parent="#menu1">Nigiri</a>
                     <a href="#" class="list-group-item" data-parent="#menu1">Uramaki</a>
                 </div>
@@ -61,10 +61,27 @@
             <div class="page-header">
                 <h2>Hello, Admin</h2>
             </div>
-            <p class="lead"><a href="logout.php">Log out</a></p>
+            <p class="lead"><a href="../logout.php">Log out</a></p>
             <hr>
             <div class="row">
-                
+                <div class="col-md-5">
+                     <form>
+                      <div class="form-group">
+                        <label for="email">Email address:</label>
+                        <input type="email" class="form-control" id="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="pwd">Password:</label>
+                        <input type="password" class="form-control" id="pwd">
+                      </div>
+                      <div class="form-check">
+                        <label class="form-check-label">
+                          <input class="form-check-input" type="checkbox"> Remember me
+                        </label>
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form> 
+                </div>
             </div>
         </main>
     </div>

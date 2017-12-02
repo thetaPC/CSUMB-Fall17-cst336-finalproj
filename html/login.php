@@ -1,14 +1,28 @@
 <?php
-    
     session_start();
     include '../database/db_connection.php';
-    
     if (isset($_SESSION["login"])) {  //Check whether the admin has logged in
         if ($_SESSION["login"] == "Y") {
             header('Location: admin.php');
+            exit();
         }
     }
-
+    
+    // $hashed_passworddb = password_hash($password, PASSWORD_DEFAULT);
+    $sql = "SELECT name, password FROM admin WHERE name='" . $_POST['username'] . "'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($_POST['pwd'], $row["password"])) {
+            echo "works";
+            $_SESSION['login'] = "Y";
+            header('Location: admin.php');
+            exit();
+        } else {
+            echo "f off";
+            $_SESSION['login'] = "N";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -48,26 +62,6 @@
                 </div>
             </form> 
             
-            <?php
-                
-                // $hashed_passworddb = password_hash($password, PASSWORD_DEFAULT);
-                
-                $sql = "SELECT name, password FROM admin WHERE name='" . $_POST['username'] . "'";
-            
-                $result = mysqli_query($conn, $sql);
-                
-                if (mysqli_num_rows($result) > 0) {
-                    $row = mysqli_fetch_assoc($result);
-                    if (password_verify($_POST['pwd'], $row["password"])) {
-                        echo "works";
-                        $_SESSION['login'] = "Y";
-                        header('Location: admin.php');
-                    } else {
-                        echo "f off";
-                        $_SESSION['login'] = "N";
-                    }
-                }
-            ?>
         </div>
       </div>
      

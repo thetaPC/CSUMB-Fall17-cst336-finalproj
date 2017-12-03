@@ -1,6 +1,14 @@
 <?php
     
     include 'database/db_connection.php';
+    
+    $sql = "UPDATE visits SET total=  total + 1 where id= 1";
+
+    if (mysqli_query($conn, $sql)) {
+        // echo "Record updated successfully";
+    } else {
+        // echo "Error updating record: " . mysqli_error($conn);
+    }
 
 ?>
 

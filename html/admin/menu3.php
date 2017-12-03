@@ -1,7 +1,7 @@
 <?php
 
-echo "<a href='#' class='list-group-item' data-parent='#menu3'>Sashimi</a>
-<a href='#' class='list-group-item' data-parent='#menu3'>Nigiri</a>
-<a href='#' class='list-group-item' data-parent='#menu3'>Uramaki</a>";
+echo "<a href='ave_price.php' class='list-group-item' data-parent='#menu3'>Ave. Price</a>
+<a href='visits.php' class='list-group-item' data-parent='#menu3'>Site visits</a>
+<a href='most_viewed.php' class='list-group-item' data-parent='#menu3'>Most viewed</a>";
 
 ?>

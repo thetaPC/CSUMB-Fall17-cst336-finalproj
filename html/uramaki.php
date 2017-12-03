@@ -53,5 +53,25 @@
       $("[data-fancybox]").fancybox({
       		// Options will go here
       	});
+      
+      $(".figure-img").on("click", function (e) {
+            e.preventDefault();
+            
+            $.ajax({
+                type: "POST",
+                url: "admin/clicks.php",
+                dataType: "json",
+                data: {
+                    "id": $(this).attr('id'),
+                    "table": "uramaki"
+                },
+                success: function(data,status) {
+                    // alert("ADDED!");
+                  },
+                  complete: function(data,status) { //optional, used for debugging purposes
+                      //alert(status);
+                  }
+           });//AJAX 
+        });
   </script>
 </body>

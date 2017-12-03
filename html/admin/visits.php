@@ -10,19 +10,6 @@
         header('Location: ../login.php');
     }
     include '../../database/db_connection.php';
-    
-    if (trim($_POST["name"]) != "" && trim($_POST["cost"]) != "" && trim($_POST["img"]) != "") {
-        $sql = "INSERT INTO sashimi (name, description, cost, img) VALUES ('" . $_POST["name"] . "', '" . $_POST["description"] . "', '" . $_POST["cost"] . "', '" . $_POST["img"] . "')";
-            
-        if (mysqli_query($conn, $sql)) {
-            // echo "New record created successfully";
-        } else {
-            // echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
-    }
-    
-    
-    
 
 ?>
 
@@ -49,11 +36,11 @@
                 </div>
                 <a href="#menu2" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-level-up"></i> <span class="d-none d-md-inline">Insert</span> </a>
                 <div class="collapse" id="menu2">
-                    <?php include 'menu2.php'; ?>
+                    <?php include 'menu2.php' ?>
                 </div>
-                <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">Records</span> </a>
+                <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-file-text-o "></i> <span class="d-none d-md-inline">Records</span> </a>
                 <div class="collapse" id="menu3">
-                    <?php include 'menu3.php'; ?>
+                    <?php include 'menu3.php' ?>
                 </div>
             </div>
         </div>
@@ -65,26 +52,27 @@
             <p class="lead"><a href="../logout.php">Log out</a></p>
             <hr>
             <div class="row justify-content-md-center">
-                <div class="col-md-5">
-                    <form method="POST" action="">
-                      <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" name="name" class="form-control" id="name">
-                      </div>
-                      <div class="form-group">
-                        <label for="desc">Description</label>
-                        <input type="text" name="description" class="form-control" id="desc">
-                      </div>
-                      <div class="form-group">
-                        <label for="cost">Cost</label>
-                        <input type="text" name="cost" class="form-control" id="cost">
-                      </div>
-                      <div class="form-group">
-                        <label for="img">Image URL</label>
-                        <input type="url" name="img" class="form-control" id="img">
-                      </div>
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                    </form> 
+                <div class="col-md-11">
+                     <?php
+                        $sql = "SELECT * FROM visits";
+                        
+                        
+                        $res = mysqli_query($conn, $sql);
+                        
+                        echo "<div class='all'>
+                            <h4>Total site visits</h4>";
+                            
+                        if (mysqli_num_rows($res) > 0) {
+                            while ($row = mysqli_fetch_assoc($res)) {
+                                echo "
+                                    <div class='sash'>
+                                        <p>" . $row["total"] . "</p>
+                                    
+                                    </div>";
+                            }
+                        }
+                        echo "</div>";
+                    ?>
                 </div>
             </div>
         </main>
@@ -96,7 +84,5 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
   <script>
       
-        
-        
   </script>
 </body>

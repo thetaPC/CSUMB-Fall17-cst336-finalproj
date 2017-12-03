@@ -42,17 +42,11 @@
                     <a href="admin/insert_nigiri.php" class="list-group-item" data-parent="#menu2">Nigiri</a>
                     <a href="admin/insert_uramaki.php" class="list-group-item" data-parent="#menu2">Uramaki</a>
                 </div>
-                <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-trash"></i> <span class="d-none d-md-inline">Delete</span> </a>
+                <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-file-text-o "></i> <span class="d-none d-md-inline">Records</span> </a>
                 <div class="collapse" id="menu3">
-                    <a href="#" class="list-group-item" data-parent="#menu3">Sashimi</a>
-                    <a href="#" class="list-group-item" data-parent="#menu3">Nigiri</a>
-                    <a href="#" class="list-group-item" data-parent="#menu3">Uramaki</a>
-                </div>
-                <a href="#menu4" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-file-text-o "></i> <span class="d-none d-md-inline">Records</span> </a>
-                <div class="collapse" id="menu4">
-                    <a href="#" class="list-group-item" data-parent="#menu4">Ave. Price</a>
-                    <a href="#" class="list-group-item" data-parent="#menu4">Site visits</a>
-                    <a href="#" class="list-group-item" data-parent="#menu4">Most viewed</a>
+                    <a href="admin/ave_price.php" class="list-group-item" data-parent="#menu3">Ave. Price</a>
+                    <a href="admin/visits.php" class="list-group-item" data-parent="#menu3">Site visits</a>
+                    <a href="admin/most_viewed.php" class="list-group-item" data-parent="#menu3">Most viewed</a>
                 </div>
             </div>
         </div>

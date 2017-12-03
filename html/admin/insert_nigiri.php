@@ -48,13 +48,9 @@
                 <div class="collapse" id="menu2">
                     <?php include 'menu2.php'; ?>
                 </div>
-                <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-trash"></i> <span class="d-none d-md-inline">Delete</span> </a>
+                <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">Records</span> </a>
                 <div class="collapse" id="menu3">
                     <?php include 'menu3.php'; ?>
-                </div>
-                <a href="#menu4" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-file-text-o "></i> <span class="d-none d-md-inline">Records</span> </a>
-                <div class="collapse" id="menu4">
-                    <?php include 'menu4.php'; ?>
                 </div>
             </div>
         </div>

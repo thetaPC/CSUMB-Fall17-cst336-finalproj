@@ -32,27 +32,19 @@
                 <div class="list-group border-0 card text-center text-md-left">
                 <a href="#menu1" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-pencil"></i> <span class="d-none d-md-inline">Update</span> </a>
                 <div class="collapse" id="menu1">
-                    <a href="update_sashimi.php" class="list-group-item" data-parent="#menu1">Sashimi</a>
-                    <a href="update_nigiri.php" class="list-group-item" data-parent="#menu1">Nigiri</a>
-                    <a href="update_uramaki.php" class="list-group-item" data-parent="#menu1">Uramaki</a>
+                    <?php include 'menu1.php'; ?>
                 </div>
                 <a href="#menu2" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-level-up"></i> <span class="d-none d-md-inline">Insert</span> </a>
                 <div class="collapse" id="menu2">
-                    <a href="insert_sashimi.php" class="list-group-item" data-parent="#menu2">Sashimi</a>
-                    <a href="#" class="list-group-item" data-parent="#menu2">Nigiri</a>
-                    <a href="#" class="list-group-item" data-parent="#menu2">Uramaki</a>
+                    <?php include 'menu2.php' ?>
                 </div>
                 <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-trash"></i> <span class="d-none d-md-inline">Delete</span> </a>
                 <div class="collapse" id="menu3">
-                    <a href="#" class="list-group-item" data-parent="#menu3">Sashimi</a>
-                    <a href="#" class="list-group-item" data-parent="#menu3">Nigiri</a>
-                    <a href="#" class="list-group-item" data-parent="#menu3">Uramaki</a>
+                    <?php include 'menu3.php' ?>
                 </div>
                 <a href="#menu4" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-file-text-o "></i> <span class="d-none d-md-inline">Records</span> </a>
                 <div class="collapse" id="menu4">
-                    <a href="#" class="list-group-item" data-parent="#menu4">Ave. Price</a>
-                    <a href="#" class="list-group-item" data-parent="#menu4">Site visits</a>
-                    <a href="#" class="list-group-item" data-parent="#menu4">Most viewed</a>
+                    <?php include 'menu4.php' ?>
                 </div>
             </div>
         </div>

@@ -39,8 +39,8 @@
                 <a href="#menu2" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-level-up"></i> <span class="d-none d-md-inline">Insert</span> </a>
                 <div class="collapse" id="menu2">
                     <a href="admin/insert_sashimi.php" class="list-group-item" data-parent="#menu2">Sashimi</a>
-                    <a href="#" class="list-group-item" data-parent="#menu2">Nigiri</a>
-                    <a href="#" class="list-group-item" data-parent="#menu2">Uramaki</a>
+                    <a href="admin/insert_nigiri.php" class="list-group-item" data-parent="#menu2">Nigiri</a>
+                    <a href="admin/insert_uramaki.php" class="list-group-item" data-parent="#menu2">Uramaki</a>
                 </div>
                 <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-trash"></i> <span class="d-none d-md-inline">Delete</span> </a>
                 <div class="collapse" id="menu3">

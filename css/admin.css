@@ -122,3 +122,7 @@
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
+
+.hidden {
+  display: none;
+}

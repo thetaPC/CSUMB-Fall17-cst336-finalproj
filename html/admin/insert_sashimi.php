@@ -10,6 +10,14 @@
         header('Location: ../login.php');
     }
     include '../../database/db_connection.php';
+    
+    $sql = "INSERT INTO sashimi (name, description, cost, img) VALUES ('" . $_POST["name"] . "', '" . $_POST["description"] . "', '" . $_POST["cost"] . "', '" . $_POST["img"] . "')";
+    
+    if (mysqli_query($conn, $sql)) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    }
 
 ?>
 
@@ -63,59 +71,27 @@
             </div>
             <p class="lead"><a href="../logout.php">Log out</a></p>
             <hr>
-            <div class="row">
+            <div class="row justify-content-md-center">
                 <div class="col-md-5">
-                     <?php
-                        $sql = "SELECT * FROM sashimi";
-                        
-                        $res = mysqli_query($conn, $sql);
-                        
-                        echo "<div class='all'>";
-                            
-                        if (mysqli_num_rows($res) > 0) {
-                            while ($row = mysqli_fetch_assoc($res)) {
-                                echo "
-                                    <div class='update-sash'>
-                                    
-                                        <p>" . $row["name"] . "\t\t$" . $row["cost"] . " <button id='" . $row["id"] . "' type='button' class='btn btn-link sashimi'>Select</button></p>
-                                    
-                                    </div>";
-                            }
-                        }
-                        echo "</div>";
-                    ?>
-                </div>
-                <div class="col-md-5">
-                    <?php
-                        $sql = "SELECT * FROM sashimi";
-                        
-                        $res = mysqli_query($conn, $sql);
-                            
-                        if (mysqli_num_rows($res) > 0) {
-                            while ($row = mysqli_fetch_assoc($res)) {
-                                echo "
-                                    <div class='hidden' id='sashimi" . $row["id"] . "'>
-                                    
-                                        <form id='update" . $row['id'] . "' method='POST' action=''>
-                                            <div class='form-group'>
-                                                <label for='name'>Name</label>
-                                                <input name='name' type='text' class='form-control' value='" . $row["name"] . "' id='name" . $row["id"] . "'>
-                                              </div>
-                                              <div class='form-group'>
-                                                <label for='desc'>Description</label>
-                                                <input name='description' type='text' class='form-control' value='" . $row["description"] . "' id='desc" . $row["id"] . "'>
-                                              </div>
-                                              <div class='form-group'>
-                                                <label for='img'>Image URL</label>
-                                                <input name='img' type='url' class='form-control' value='" . $row["img"] . "' id='img" . $row["id"] . "'>
-                                              </div>
-                                        </form>
-                                        <button id='sub" . $row['id'] . "' class='btn btn-primary'>Update</button>
-                                        <button id='can" . $row['id'] . "' type='button' class='btn btn-danger'>Cancel</button>
-                                    </div>";
-                            }
-                        }
-                    ?>
+                    <form method="POST" action="">
+                      <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" class="form-control" id="name">
+                      </div>
+                      <div class="form-group">
+                        <label for="desc">Description</label>
+                        <input type="text" name="description" class="form-control" id="desc">
+                      </div>
+                      <div class="form-group">
+                        <label for="cost">Cost</label>
+                        <input type="text" name="cost" class="form-control" id="cost">
+                      </div>
+                      <div class="form-group">
+                        <label for="img">Image URL</label>
+                        <input type="url" name="img" class="form-control" id="img">
+                      </div>
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </form> 
                 </div>
             </div>
         </main>
@@ -126,46 +102,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
   <script>
-      let name;
-      let id;
-       $(".sashimi").click(function() {
-           name = "sashimi" + $(this).attr('id');
-           id = $(this).attr('id');
-           $("#"+name).removeClass('hidden');
-           $(".all").addClass('hidden');
-           
-           $("#sub"+id).click(function(e) {
-               e.preventDefault();
-               
-               $.ajax({
-                    type: "POST",
-                    url: "update.php",
-                    dataType: "json",
-                    data: {
-                        "id": id,
-                        "name": $("#name"+id).val(),
-                        "description": $("#desc"+id).val(),
-                        "img": $("#img"+id).val(),
-                        "table": "sashimi"
-                    },
-                    success: function(data,status) {
-                        // alert("ADDED!");
-                      },
-                      complete: function(data,status) { //optional, used for debugging purposes
-                          //alert(status);
-                      }
-               });//AJAX 
-               
-               $("#"+name).addClass('hidden');
-               $(".all").removeClass('hidden');
-            });
-            
-            $("#can"+id).click(function(e) {
-               e.preventDefault();
-               $("#"+name).addClass('hidden');
-               $(".all").removeClass('hidden');
-            });
-        });
+      
         
         
   </script>

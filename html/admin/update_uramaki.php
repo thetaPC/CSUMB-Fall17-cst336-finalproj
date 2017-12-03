@@ -66,7 +66,7 @@
             <div class="row">
                 <div class="col-md-5">
                      <?php
-                        $sql = "SELECT * FROM sashimi";
+                        $sql = "SELECT * FROM uramaki";
                         
                         $res = mysqli_query($conn, $sql);
                         
@@ -75,9 +75,9 @@
                         if (mysqli_num_rows($res) > 0) {
                             while ($row = mysqli_fetch_assoc($res)) {
                                 echo "
-                                    <div class='update-sash'>
+                                    <div class='update-uram'>
                                     
-                                        <p>" . $row["name"] . "\t\t$" . $row["cost"] . " <button id='" . $row["id"] . "' type='button' class='btn btn-link sashimi'>Select</button></p>
+                                        <p>" . $row["name"] . "\t\t$" . $row["cost"] . " <button id='" . $row["id"] . "' type='button' class='btn btn-link uramaki'>Select</button></p>
                                     
                                     </div>";
                             }
@@ -87,14 +87,14 @@
                 </div>
                 <div class="col-md-5">
                     <?php
-                        $sql = "SELECT * FROM sashimi";
+                        $sql = "SELECT * FROM uramaki";
                         
                         $res = mysqli_query($conn, $sql);
                             
                         if (mysqli_num_rows($res) > 0) {
                             while ($row = mysqli_fetch_assoc($res)) {
                                 echo "
-                                    <div class='hidden' id='sashimi" . $row["id"] . "'>
+                                    <div class='hidden' id='uramaki" . $row["id"] . "'>
                                     
                                         <form id='update" . $row['id'] . "' method='POST' action=''>
                                             <div class='form-group'>
@@ -128,8 +128,8 @@
   <script>
       let name;
       let id;
-       $(".sashimi").click(function() {
-           name = "sashimi" + $(this).attr('id');
+       $(".uramaki").click(function() {
+           name = "uramaki" + $(this).attr('id');
            id = $(this).attr('id');
            $("#"+name).removeClass('hidden');
            $(".all").addClass('hidden');
@@ -146,7 +146,7 @@
                         "name": $("#name"+id).val(),
                         "description": $("#desc"+id).val(),
                         "img": $("#img"+id).val(),
-                        "table": "sashimi"
+                        "table": "uramaki"
                     },
                     success: function(data,status) {
                         // alert("ADDED!");

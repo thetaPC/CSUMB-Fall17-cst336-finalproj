@@ -106,6 +106,10 @@
                                                 <input name='description' type='text' class='form-control' value='" . $row["description"] . "' id='desc" . $row["id"] . "'>
                                               </div>
                                               <div class='form-group'>
+                                                <label for='desc'>Cost</label>
+                                                <input name='cost' type='text' class='form-control' value='" . $row["cost"] . "' id='cost" . $row["id"] . "'>
+                                              </div>
+                                              <div class='form-group'>
                                                 <label for='img'>Image URL</label>
                                                 <input name='img' type='url' class='form-control' value='" . $row["img"] . "' id='img" . $row["id"] . "'>
                                               </div>
@@ -145,6 +149,7 @@
                         "id": id,
                         "name": $("#name"+id).val(),
                         "description": $("#desc"+id).val(),
+                        "cost": $("#cost"+id).val(),
                         "img": $("#img"+id).val(),
                         "table": "uramaki"
                     },

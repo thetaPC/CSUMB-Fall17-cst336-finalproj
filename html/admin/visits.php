@@ -54,7 +54,7 @@
             <div class="row justify-content-md-center">
                 <div class="col-md-11">
                      <?php
-                        $sql = "SELECT * FROM visits";
+                        $sql = "SELECT MAX(total) as total FROM visits";
                         
                         
                         $res = mysqli_query($conn, $sql);

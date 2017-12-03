@@ -107,7 +107,8 @@
                                               </div>
                                         </form>
                                         <button id='sub" . $row['id'] . "' class='btn btn-primary'>Update</button>
-                                        <button id='can" . $row['id'] . "' type='button' class='btn btn-danger'>Cancel</button>
+                                        <button id='can" . $row['id'] . "' type='button' class='btn btn-dark'>Cancel</button>
+                                        <button id='del" . $row['id'] . "' type='button' class='btn btn-danger'>Delete</button>
                                     </div>";
                             }
                         }
@@ -161,6 +162,30 @@
                e.preventDefault();
                $("#"+name).addClass('hidden');
                $(".all").removeClass('hidden');
+            });
+            
+            $("#del"+id).click(function(e) {
+               e.preventDefault();
+               if (confirm('Are you sure you want to delete this?')) {
+                   $.ajax({
+                        type: "POST",
+                        url: "delete.php",
+                        dataType: "json",
+                        data: {
+                            "id": id,
+                            "table": "sashimi"
+                        },
+                        success: function(data,status) {
+                            // alert("ADDED!");
+                          },
+                          complete: function(data,status) { //optional, used for debugging purposes
+                              //alert(status);
+                          }
+                   });//AJAX 
+                   
+                   $("#"+name).addClass('hidden');
+                   $(".all").removeClass('hidden');
+               }
             });
         });
         

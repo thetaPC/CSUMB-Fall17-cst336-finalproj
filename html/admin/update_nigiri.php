@@ -65,7 +65,7 @@
                                 echo "
                                     <div class='update-nig'>
                                     
-                                        <p>" . $row["name"] . "\t\t$" . $row["cost"] . " <button id='" . $row["id"] . "' type='button' class='btn btn-link nigiri'>Select</button></p>
+                                        <p id='list" . $row['id'] . "' style='display: inline-block;'>" . $row["name"] . " $" . $row["cost"] . "</p><button id='" . $row["id"] . "' type='button' style='margin-bottom: 7px;' class='btn btn-link nigiri'>Select</button>
                                     
                                     </div>";
                             }
@@ -147,11 +147,13 @@
                       },
                       complete: function(data,status) { //optional, used for debugging purposes
                           //alert(status);
+                          $("#list"+id).text($("#name"+id).val() + " $" + $("#cost"+id).val());
                       }
                });//AJAX 
                
                $("#"+name).addClass('hidden');
                $(".all").removeClass('hidden');
+            //   location.reload();
             });
             
             $("#can"+id).click(function(e) {

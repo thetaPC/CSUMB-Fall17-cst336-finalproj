@@ -51,7 +51,7 @@
                 <div class="collapse" id="menu2">
                     <?php include 'menu2.php'; ?>
                 </div>
-                <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">Records</span> </a>
+                <a href="#menu3" class="list-group-item d-inline-block collapsed" data-toggle="collapse" data-parent="#sidebar" aria-expanded="false"><i class="fa fa-file-text-o"></i> <span class="d-none d-md-inline">Record</span> </a>
                 <div class="collapse" id="menu3">
                     <?php include 'menu3.php'; ?>
                 </div>

@@ -65,7 +65,7 @@
                                 echo "
                                     <div class='update-sash'>
                                     
-                                        <p>" . $row["name"] . "\t\t$" . $row["cost"] . " <button id='" . $row["id"] . "' type='button' class='btn btn-link sashimi'>Select</button></p>
+                                        <p id='list" . $row['id'] . "' style='display: inline-block;'>" . $row["name"] . "\t\t$" . $row["cost"] . "</p><button id='" . $row["id"] . "' type='button' style='margin-bottom: 7px;' class='btn btn-link sashimi'>Select</button>
                                     
                                     </div>";
                             }
@@ -147,6 +147,7 @@
                       },
                       complete: function(data,status) { //optional, used for debugging purposes
                           //alert(status);
+                          $("#list"+id).text($("#name"+id).val() + " $" + $("#cost"+id).val());
                       }
                });//AJAX 
                

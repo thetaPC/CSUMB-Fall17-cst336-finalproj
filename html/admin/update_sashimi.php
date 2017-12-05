@@ -63,7 +63,7 @@
                         if (mysqli_num_rows($res) > 0) {
                             while ($row = mysqli_fetch_assoc($res)) {
                                 echo "
-                                    <div class='update-sash'>
+                                    <div id='each" . $row["id"] . "' class='update-sash'>
                                     
                                         <p id='list" . $row['id'] . "' style='display: inline-block;'>" . $row["name"] . "\t\t$" . $row["cost"] . "</p><button id='" . $row["id"] . "' type='button' style='margin-bottom: 7px;' class='btn btn-link sashimi'>Select</button>
                                     
@@ -177,6 +177,7 @@
                           },
                           complete: function(data,status) { //optional, used for debugging purposes
                               //alert(status);
+                              $("#each"+id).addClass('hidden');
                           }
                    });//AJAX 
                    

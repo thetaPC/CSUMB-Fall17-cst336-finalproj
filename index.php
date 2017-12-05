@@ -29,10 +29,10 @@
     
     <div class="row">
       <div class="col-md-8">
-        <img id="salmon-main" src="https://www.manusmenu.com/wp-content/uploads/2016/05/1-Salmon-Sashimi-with-Ponzu-3-1-of-1.jpg" />
+        <img id="salmon-main" class="img-fluid" src="https://www.manusmenu.com/wp-content/uploads/2016/05/1-Salmon-Sashimi-with-Ponzu-3-1-of-1.jpg" />
       </div>
       <div class="col-md-4">
-        <img id="roll-main" src="https://i.pinimg.com/736x/9b/fc/b5/9bfcb57cfc568c2a266f6ee383213d4a--tuna-sushi-recipe-sushi-recipes.jpg" />
+        <img id="roll-main" class="img-fluid" src="https://i.pinimg.com/736x/9b/fc/b5/9bfcb57cfc568c2a266f6ee383213d4a--tuna-sushi-recipe-sushi-recipes.jpg" />
       </div>
     </div>
     

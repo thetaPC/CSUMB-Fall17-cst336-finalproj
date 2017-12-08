@@ -14,7 +14,6 @@
     if (mysqli_num_rows($result) > 0) {
         $row = mysqli_fetch_assoc($result);
         if (password_verify($_POST['pwd'], $row["password"])) {
-            echo "works";
             $_SESSION['login'] = "Y";
             header('Location: admin.php');
             exit();

@@ -19,7 +19,6 @@
             header('Location: admin.php');
             exit();
         } else {
-            echo "f off";
             $_SESSION['login'] = "N";
         }
     }
